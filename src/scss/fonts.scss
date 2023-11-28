@@ -1,0 +1,17 @@
+$font-path-gilroy: "./fonts/Gilroy";
+
+@mixin mk-gilroy-font-face($name, $weight, $style) {
+  @font-face {
+    font-family: 'Gilroy';
+    src: url('#{$font-path-gilroy}/Gilroy-#{$name}.eot');
+    src: url('#{$font-path-gilroy}/Gilroy-#{$name}.eot?#iefix') format('embedded-opentype'),
+         url('#{$font-path-gilroy}/Gilroy-#{$name}.woff') format('woff'),
+         url('#{$font-path-gilroy}/Gilroy-#{$name}.ttf') format('truetype');
+    font-weight: $weight;
+    font-style: $style;
+  }
+}
+
+@include mk-gilroy-font-face('Regular', 400, normal);
+@include mk-gilroy-font-face('Bold', 700, normal);
+@include mk-gilroy-font-face('Medium', 300, normal);
