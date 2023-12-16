@@ -13,12 +13,10 @@
       </div>
     </div>
     <p>
-      bottom drop orizon
-
-      Meleshko feature/02
-
-      Meleshko feature/03
+      New develop
     </p>
+    <p>New test 02</p>
+    <p>New test 03</p>
 
   </div>
 </template>
