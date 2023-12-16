@@ -17,6 +17,7 @@
     </p>
     <p>New test 02</p>
     <p>New test 03</p>
+    <p>After deploy</p>
 
   </div>
 </template>
