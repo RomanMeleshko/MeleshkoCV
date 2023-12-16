@@ -13,11 +13,7 @@
       </div>
     </div>
     <p>
-      bottom drop orizon
-
-      Meleshko feature/02
-
-      Meleshko feature/03
+      New develop
     </p>
 
   </div>
