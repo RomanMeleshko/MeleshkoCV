@@ -3,13 +3,14 @@ $bg-text: blue;
 /* Common */
 $white: #ffffff;
 $border: #CCCCCC;
+$radius-block: 20px;
 
-/* Alert */
-$border-color: #B2D6C5;
-$bg-success: #D5E6DE;
+/* NavBar */
+$radius-item: 20px;
+$font-size-navbar: 14px;
+$border-style: 1px solid red;
+$background-block: #FEFEFE;
 
-/* Menu-item */
-$background-item: #E9F2FF;
-$color-item: #227AFF;
-$border-radius-item: 3px;
-$box-shadow-item: 0px 0px 0px 1px #C3DAFF;
+/* Footer */
+$footer-padding: 20px;
+

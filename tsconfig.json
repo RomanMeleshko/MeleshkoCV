@@ -20,7 +20,8 @@
       "models/*": ["models/*"],
       "store/*": ["store/*"],
       "assets/*": ["assets/*"],
-      "scss/*": ["scss/*"]
+      "scss/*": ["scss/*"],
+      "views/*": ["views/*"]
     },
 
     /* Linting */

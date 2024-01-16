@@ -7,16 +7,18 @@
 }
 
 /* Turn-off vertical scrolling under header block */
-//html {
-//  overflow: hidden;
-//}
-//
-//body {
-//  position: fixed;
-//  left: 0;
-//  top: 0;
-//  bottom: 0;
-//  right: 0;
-//  overflow-y: scroll;
-//}
+html {
+  overflow: hidden;
+}
+
+body {
+  margin: 10px;
+  position: fixed;
+  background: #ECEDED;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  overflow-y: scroll;
+}
 
