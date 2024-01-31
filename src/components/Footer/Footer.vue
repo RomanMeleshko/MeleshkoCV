@@ -5,64 +5,31 @@
      <div class="footer_wrapper">
 
        <div class="row">
-         <div class="col d-flex justify-content-center align-items-center">
+         <div class="col-md-3 col-sm-6 my-4 my-sm-4 d-flex justify-content-center align-items-center">
            <div class="footer_banner">
-             <label>FRONT END</label>
+
+             <slot name="footer-banner"></slot>
+
            </div>
          </div>
-         <div class="col">
+         <div class="col-md-3 col-sm-6 d-flex justify-content-sm-center align-items-center">
            <div class="footer_place">
 
-             <ul class="ps-0">
-               <li class="footer_title pb-2">Местонахождение</li>
-               <li class="contacts">
-                 <span class="pre">г. </span>
-                 <span>Полтава</span>
-               </li>
-             </ul>
+             <slot name="footer-place"></slot>
 
            </div>
          </div>
-         <div class="col">
+         <div class="col-md-3 col-sm-6 d-flex justify-content-sm-center align-items-center">
            <div class="footer_callback">
 
-             <ul class="ps-0">
-               <li class="footer_title pb-2">Обратная связь</li>
-               <li class="contacts">
-                 <span>тел. </span>
-                 <span>0955209822</span>
-               </li>
-               <li class="contacts">
-                 <span>email. </span>
-                 <span>roman.meleshko1@gmail.com</span>
-               </li>
-             </ul>
+             <slot name="footer-callback"></slot>
 
            </div>
          </div>
-         <div class="col">
+         <div class="col-md-3 col-sm-6 d-flex justify-content-sm-center align-items-center">
            <div class="footer_call">
 
-             <ul class="ps-0">
-               <li class="footer_title pb-2">Связь</li>
-               <li>
-                 <span class="icon px-1">
-                   <a href="https://github.com/RomanMeleshko/MeleshkoCV" target="_blank">
-                     <font-awesome-icon icon="fa-brands fa-github" />
-                   </a>
-                 </span>
-                 <span class="icon px-1">
-                   <a href="https://www.instagram.com/roma_meleshko/" target="_blank">
-                     <font-awesome-icon icon="fa-brands fa-square-instagram" />
-                   </a>
-                 </span>
-                 <span class="icon px-1">
-                   <a href="https://www.linkedin.com/in/roman-meleshko-400036160/" target="_blank">
-                     <font-awesome-icon icon="fa-brands fa-linkedin" />
-                   </a>
-                 </span>
-               </li>
-             </ul>
+             <slot name="footer-call"></slot>
 
            </div>
          </div>
@@ -92,40 +59,55 @@ export default defineComponent({
 @import "scss/variables.scss";
 
  .footer {
-   font-size: 14px;
    margin-top: 10px;
    padding: $footer-padding;
    background: $background-block;
    border-radius: $radius-block;
  }
 
- .footer_banner {
-   font-size: 20px;
- }
-
- .footer_title {
-   font-size: 16px;
- }
-
- .fa-github,
- .fa-square-instagram,
- .fa-linkedin {
-   width: 30px;
-   height: 30px;
-   color: #1A9FF5;
- }
-
- ul {
-   list-style-type: none;
- }
-
- .contacts > span:first-child {
-   color: #9fa19e;
- }
-
- //.dron {
- //  display: flex;
- //  justify-content: center;
- //  align-items: center;
+ //.footer .contacts {
+ //  font-size: clamp(12px, 2.5vw, 14px);
  //}
+
+ //.footer_banner label {
+ //  border-radius: 7px;
+ //  padding: 10px;
+ //  font-weight: normal;
+ //  box-shadow: 2px 9px 12px #ECEDED;
+ //  font-size: clamp(18px, 2.5vw, 25px);
+ //}
+
+ //.footer_title {
+ //  font-size: clamp(14px, 2.5vw, 16px);
+ //}
+
+ //.fa-github,
+ //.fa-square-instagram,
+ //.fa-linkedin {
+ //  width: 30px;
+ //  height: 30px;
+ //  color: #eece49;
+ //  border-radius: 7px;
+ //  box-shadow: 2px 9px 12px #ECEDED;
+ //  padding: 5px;
+ //  //transform: rotate(0deg);
+ //  transition: all 0.3s linear 0s;
+ //
+ //  &:hover {
+ //    transform: scale(1.2);
+ //  }
+ //}
+
+ //ul {
+ //  list-style-type: none;
+ //}
+ //
+ //.contacts > span:first-child {
+ //  color: #9fa19e;
+ //}
+
+ //.footer_call {
+ //  min-width: 140px;
+ //}
+
 </style>

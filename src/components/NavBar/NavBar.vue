@@ -1,34 +1,23 @@
 <template>
  <div class="NavBar">
 
-   <nav v-tooltip class="navbar navbar-expand-sm navbar-light">
-     <div class="container-fluid px-xl-0 px-lg-0 px-md-0 px-sm-0">
-<!--       <a class="navbar-brand" href="#">Portfolio</a>-->
-       <slot name="navbar-brand"></slot>
-       <button class="navbar-toggler p-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo" aria-controls="navbarTogglerDemo" aria-expanded="false" aria-label="Toggle navigation">
-         <span class="navbar-toggler-icon"></span>
-       </button>
-       <div class="collapse navbar-collapse" id="navbarTogglerDemo">
-         <ul class="navbar-nav mb-lg-0">
-           <slot name="navbar-items"></slot>
+   <Transition name="nav">
 
-<!--           <li class="nav-item">-->
-<!--             <a class="nav-link active" aria-current="page" href="#">Home</a>-->
-<!--           </li>-->
-<!--           <li class="nav-item">-->
-<!--             <a class="nav-link" href="#">About</a>-->
-<!--           </li>-->
-<!--           <li class="nav-item">-->
-<!--             <a class="nav-link" href="#">Portfolio</a>-->
-<!--           </li>-->
-<!--           <li class="nav-item">-->
-<!--             <a class="nav-link" href="#">Contacts</a>-->
-<!--           </li>-->
-
-         </ul>
+     <nav v-if="show" v-tooltip class="navbar navbar-expand-sm navbar-light">
+       <div class="container-fluid px-xl-0 px-lg-0 px-md-0 px-sm-0">
+         <slot name="navbar-brand"></slot>
+         <button class="navbar-toggler p-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo" aria-controls="navbarTogglerDemo" aria-expanded="false" aria-label="Toggle navigation">
+           <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse" id="navbarTogglerDemo">
+           <ul class="navbar-nav mb-lg-0">
+             <slot name="navbar-items"></slot>
+           </ul>
+         </div>
        </div>
-     </div>
-   </nav>
+     </nav>
+
+     </Transition>
 
  </div>
 </template>
@@ -38,8 +27,12 @@ export default {
   name: "NavBar",
   data() {
     return {
-
+     show: false
     }
+  },
+
+  mounted() {
+    this.show = true;
   }
 }
 </script>
@@ -76,5 +69,17 @@ export default {
    width: 20px;
    height: 20px;
  }
+
+ .nav-enter-active,
+ .nav-leave-active {
+  transition: opacity 2s ease,
+              margin-top 1s ease;
+}
+
+ .nav-enter-from,
+ .nav-leave-to {
+   opacity: 0;
+   margin-top: 50px;
+}
 
 </style>
