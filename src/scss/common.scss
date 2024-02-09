@@ -1,5 +1,6 @@
 @import "bootstrap/dist/css/bootstrap.css";
 @import 'swiper/swiper-bundle.css';
+//@import 'aos/dist/aos.css';
 
 * {
   font-family: Gilroy;
@@ -7,13 +8,13 @@
 }
 
 /* Turn-off vertical scrolling under header block */
-html {
-  overflow: hidden;
-}
+//html {
+//  overflow: hidden;
+//}
 
 body {
   margin: 10px;
-  position: fixed;
+  position: relative;
   background: #ECEDED;
   left: 0;
   top: 0;
