@@ -70,16 +70,17 @@ export default {
    height: 20px;
  }
 
+ // Animation elements which have wrapper Transition tag
  .nav-enter-active,
  .nav-leave-active {
-  transition: opacity 2s ease,
-              margin-top 1s ease;
-}
+  transition: opacity 3s ease,
+              margin-top 2s ease;
+  }
 
  .nav-enter-from,
  .nav-leave-to {
    opacity: 0;
    margin-top: 50px;
-}
+ }
 
 </style>

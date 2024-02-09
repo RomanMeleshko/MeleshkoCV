@@ -156,11 +156,31 @@ export default defineComponent({
       ],
     }
   },
+
+  methods: {
+   // foo() {
+   //   // if( this.scrollTop > 50 ) {
+   //   //   alert("more 50");
+   //   // }
+   //
+   //   console.log("fffff");
+   //
+   //   // alert("hgere");
+   //
+   // }
+  },
+
+  mounted() {
+    // window.addEventListener('wheel', function() {
+    //   console.log( "window" );
+    // });
+  },
+
   components: {
     NavBar,
     Footer: defineAsyncComponent({
       loader: () => import("components/Footer/Footer.vue"),
-      delay: 1000,
+      delay: 10000,
       timeout: 3000
     })
   }
@@ -173,13 +193,18 @@ export default defineComponent({
 @import "scss/app.scss";
 @import "scss/variables.scss";
 
+ //.app-layout {
+ //  height: 97vh;
+ //  overflow: scroll;
+ //}
+
  // Header
 
- header {
-   position: sticky;
-   top: 0px;
-   z-index: 999;
- }
+ //header {
+ //  position: sticky;
+ //  top: 0px;
+ //  z-index: 999;
+ //}
 
  .logo {
    border-radius: 50%;
