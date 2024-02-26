@@ -1,18 +1,17 @@
 export default {
-    mounted( el, binding ) {
+    mounted( el: Object, binding: any ) {
 
-    let scroll = function (evt) {
+    let scroll = function ( evt: any ): void {
       if (binding.value(evt, el)) {
-        document.body.removeEventListener('scroll', scroll);
+        window.removeEventListener('scroll', scroll);
       }
     }
-    document.body.addEventListener('scroll', scroll);
+    window.addEventListener('scroll', scroll);
 
     },
 
-    unmounted( el ) {
+    unmounted( el: any ) {
         el.onscroll = null;
-        console.log( "unmounted scroll", el );
     }
 
 }

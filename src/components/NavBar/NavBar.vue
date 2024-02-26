@@ -1,33 +1,31 @@
 <template>
  <div class="NavBar">
 
-   <Transition name="nav">
-
-     <nav v-if="show" v-tooltip class="navbar navbar-expand-sm navbar-light">
-       <div class="container-fluid px-xl-0 px-lg-0 px-md-0 px-sm-0">
-         <slot name="navbar-brand"></slot>
-         <button class="navbar-toggler p-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo" aria-controls="navbarTogglerDemo" aria-expanded="false" aria-label="Toggle navigation">
-           <span class="navbar-toggler-icon"></span>
-         </button>
-         <div class="collapse navbar-collapse" id="navbarTogglerDemo">
-           <ul class="navbar-nav mb-lg-0">
-             <slot name="navbar-items"></slot>
-           </ul>
-         </div>
+   <nav v-if="show" class="navbar navbar-expand-sm navbar-light">
+     <div class="container-fluid px-xl-0 px-lg-0 px-md-0 px-sm-0">
+       <slot name="navbar-brand"></slot>
+       <button class="navbar-toggler p-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo" aria-controls="navbarTogglerDemo" aria-expanded="false" aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon"></span>
+       </button>
+       <div class="collapse navbar-collapse" id="navbarTogglerDemo">
+         <ul class="navbar-nav mb-lg-0">
+           <slot name="navbar-items"></slot>
+         </ul>
        </div>
-     </nav>
-
-     </Transition>
+     </div>
+   </nav>
 
  </div>
 </template>
 
 <script lang="ts">
 export default {
+  el: "#NavBar",
   name: "NavBar",
   data() {
     return {
-     show: false
+      show: false,
+      scrollWindow: 0
     }
   },
 
@@ -82,5 +80,32 @@ export default {
    opacity: 0;
    margin-top: 50px;
  }
+ //
+ //.close {
+ //  animation: close 2s ease;
+ //}
+ //
+ //@keyframes close {
+ //  0% {
+ //    opacity: 1;
+ //  }
+ //  100% {
+ //    opacity: 0;
+ //  }
+ //}
+ //
+ //.open {
+ //  animation: open 2s ease;
+ //}
+ //
+ //@keyframes open {
+ //  0% {
+ //    opacity: 0;
+ //  }
+ //  100% {
+ //    opacity: 1;
+ //  }
+ //}
+
 
 </style>

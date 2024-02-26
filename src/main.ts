@@ -14,9 +14,10 @@ import { faUser, faClock, faWandMagicSparkles } from '@fortawesome/free-solid-sv
 import { faFacebook,
          faGithub,
          faSquareInstagram,
-         faLinkedin
+         faLinkedin,
+         faLinkedinIn,
+         faInstagram
        } from '@fortawesome/free-brands-svg-icons'
-// import {PluginOption} from "vite";
 
 library.add( faUser,
              faClock,
@@ -24,7 +25,9 @@ library.add( faUser,
              faFacebook,
              faGithub,
              faSquareInstagram,
-             faLinkedin
+             faLinkedin,
+             faLinkedinIn,
+             faInstagram
             );
 
 
