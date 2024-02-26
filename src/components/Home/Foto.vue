@@ -1,7 +1,7 @@
 <template>
  <div id="Foto">
 
-   <slot name="foto"></slot>
+     <slot name="foto"></slot>
 
  </div>
 </template>

@@ -7,16 +7,20 @@
 
         <header>
 
-          <NavBar>
+          <NavBar data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000">
             <template v-slot:navbar-brand>
+
               <a class="navbar-brand ms-sm-3" href="#">
                 <img class="logo" src="assets/Icon.png" width="35" height="35" alt=""/>
               </a>
+
             </template>
             <template v-slot:navbar-items>
+
               <li v-for="item in items" :key="item.id" class="nav-item me-xl-2 me-lg-3 me-md-2 me-sm-2 px-3">
-               <a class="nav-link" :class="item.class" aria-current="page" href="#">{{ item.name }}</a>
+               <a class="nav-link" :class="item.class" aria-current="page" :href="item.link">{{ item.name }}</a>
              </li>
+
             </template>
           </NavBar>
 
@@ -30,10 +34,13 @@
 
         <footer>
 
-          <Footer>
+          <Footer class="foo" data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000">
             <template v-slot:footer-banner>
 
-              <img src="assets/Label-Meleshko.png" width="150" alt="">
+              <label class="banner" style="position: relative">
+                <span class="banner-text" style="position: absolute">M</span>
+                <img src="assets/yellow.png" width="90" alt="">
+              </label>
 
             </template>
             <template v-slot:footer-place>
@@ -91,13 +98,16 @@
 <script lang="ts">
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
-import { defineComponent, defineAsyncComponent } from 'vue'
+import AOS from 'aos';
+
+import { defineComponent } from 'vue'
 
 import Note from "models/interface/Note";
 import Link from "models/interface/Link";
 
 import NavBar from "components/NavBar/NavBar.vue";
-// import Footer from  "components/Footer/Footer.vue";
+import Footer from  "components/Footer/Footer.vue";
+import ButtonTop from "components/Buttons/ButtonTop.vue";
 
 export default defineComponent({
   name: "App",
@@ -107,15 +117,18 @@ export default defineComponent({
         {
           id: 1,
           name: "Home",
-          class: "active"
+          class: "active",
+          link: "#home"
         } as Note,
         {
           id: 2,
           name: "About",
+          link: "#about"
         } as Note,
         {
           id: 3,
           name: "Contact",
+          link: "#contact"
         } as Note
       ],
       location: [
@@ -144,11 +157,11 @@ export default defineComponent({
             } as Link,
             {
               link: "https://www.instagram.com/roma_meleshko/",
-              icon: "fa-brands fa-square-instagram"
+              icon: "fa-brands fa-instagram"
             } as Link,
             {
               link: "https://www.linkedin.com/in/roman-meleshko-400036160/",
-              icon: "fa-brands fa-linkedin"
+              icon: "fa-brands fa-linkedin-in"
             } as Link,
           ],
         } as Note,
@@ -157,32 +170,14 @@ export default defineComponent({
     }
   },
 
-  methods: {
-   // foo() {
-   //   // if( this.scrollTop > 50 ) {
-   //   //   alert("more 50");
-   //   // }
-   //
-   //   console.log("fffff");
-   //
-   //   // alert("hgere");
-   //
-   // }
-  },
-
   mounted() {
-    // window.addEventListener('wheel', function() {
-    //   console.log( "window" );
-    // });
+    AOS.init();
   },
 
   components: {
     NavBar,
-    Footer: defineAsyncComponent({
-      loader: () => import("components/Footer/Footer.vue"),
-      delay: 10000,
-      timeout: 3000
-    })
+    Footer,
+    ButtonTop
   }
 })
 
@@ -193,19 +188,7 @@ export default defineComponent({
 @import "scss/app.scss";
 @import "scss/variables.scss";
 
- //.app-layout {
- //  height: 97vh;
- //  overflow: scroll;
- //}
-
  // Header
-
- //header {
- //  position: sticky;
- //  top: 0px;
- //  z-index: 999;
- //}
-
  .logo {
    border-radius: 50%;
  }
@@ -240,15 +223,13 @@ export default defineComponent({
  }
 
  .fa-github,
- .fa-square-instagram,
- .fa-linkedin {
+ .fa-instagram,
+ .fa-linkedin-in {
    width: 30px;
    height: 30px;
-   color: #eece49;
+   color: #FF6F30;
    border-radius: 7px;
-   box-shadow: 2px 9px 12px #ECEDED;
    padding: 5px;
-   //transform: rotate(0deg);
    transition: all 0.3s linear 0s;
 
    &:hover {
@@ -258,6 +239,17 @@ export default defineComponent({
 
  .footer_call {
    min-width: 140px;
+ }
+
+ .banner {
+   position: relative;
+ }
+ .banner-text {
+   top: 50%;
+   left: 50%;
+   font-style: italic;
+   font-size: 30px;
+   transform: translate(-50%, -50%);
  }
 
 </style>

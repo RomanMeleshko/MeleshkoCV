@@ -1,11 +1,17 @@
+import { Tooltip } from "bootstrap";
+
 export default {
-    mounted( el: Object ) {
-        console.log( "mounted", el );
+    mounted( el: any, binding: any ) {
+
+        new Tooltip(el, {
+            placement: binding.arg || 'top',
+            title: binding.value,
+        });
 
     },
 
-    unmounted( el: Object ) {
-        console.log( "unmounted", el );
+    unmounted( el: any ) {
+        el.onmouseenter = null;
     }
 
 }
