@@ -1,24 +1,49 @@
 @import "bootstrap/dist/css/bootstrap.css";
 @import 'swiper/swiper-bundle.css';
 
+// Global styles for all elements
 * {
   font-family: Gilroy;
   font-weight: 300;
 }
 
-/* Turn-off vertical scrolling under header block */
-html {
-  overflow: hidden;
-}
-
 body {
   margin: 10px;
-  position: fixed;
-  background: #ECEDED;
   left: 0;
   top: 0;
   bottom: 0;
   right: 0;
+  position: relative;
   overflow-y: scroll;
+  overflow-x: hidden;
+  background: #ECEDED;
 }
+
+// Global style for tooltip directive
+.tooltip_block {
+   padding: 10px 15px;
+   position: absolute;
+   background: #009be5;
+   color: #ffffff;
+   box-sizing: border-box;
+   font-size: clamp(5px, 4.5vw, 13px);
+ }
+
+ .tooltip_block::before {
+   position: absolute;
+   content: "";
+   top: 37px;
+   width: 0;
+   height: 0;
+   border: 0 solid transparent;
+   border-left-width: 12px;
+   border-right-width: 12px;
+   border-top: 13px solid #009be5;
+ }
+
+ @media (max-width: 576px) {
+   .tooltip_block {
+     background: red;
+   }
+ }
 

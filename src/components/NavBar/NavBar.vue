@@ -1,9 +1,8 @@
 <template>
  <div class="NavBar">
 
-   <nav v-tooltip class="navbar navbar-expand-sm navbar-light">
+   <nav v-if="show" class="navbar navbar-expand-sm navbar-light">
      <div class="container-fluid px-xl-0 px-lg-0 px-md-0 px-sm-0">
-<!--       <a class="navbar-brand" href="#">Portfolio</a>-->
        <slot name="navbar-brand"></slot>
        <button class="navbar-toggler p-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo" aria-controls="navbarTogglerDemo" aria-expanded="false" aria-label="Toggle navigation">
          <span class="navbar-toggler-icon"></span>
@@ -11,20 +10,6 @@
        <div class="collapse navbar-collapse" id="navbarTogglerDemo">
          <ul class="navbar-nav mb-lg-0">
            <slot name="navbar-items"></slot>
-
-<!--           <li class="nav-item">-->
-<!--             <a class="nav-link active" aria-current="page" href="#">Home</a>-->
-<!--           </li>-->
-<!--           <li class="nav-item">-->
-<!--             <a class="nav-link" href="#">About</a>-->
-<!--           </li>-->
-<!--           <li class="nav-item">-->
-<!--             <a class="nav-link" href="#">Portfolio</a>-->
-<!--           </li>-->
-<!--           <li class="nav-item">-->
-<!--             <a class="nav-link" href="#">Contacts</a>-->
-<!--           </li>-->
-
          </ul>
        </div>
      </div>
@@ -35,11 +20,17 @@
 
 <script lang="ts">
 export default {
+  el: "#NavBar",
   name: "NavBar",
   data() {
     return {
-
+      show: false,
+      scrollWindow: 0
     }
+  },
+
+  mounted() {
+    this.show = true;
   }
 }
 </script>
@@ -76,5 +67,45 @@ export default {
    width: 20px;
    height: 20px;
  }
+
+ // Animation elements which have wrapper Transition tag
+ .nav-enter-active,
+ .nav-leave-active {
+  transition: opacity 3s ease,
+              margin-top 2s ease;
+  }
+
+ .nav-enter-from,
+ .nav-leave-to {
+   opacity: 0;
+   margin-top: 50px;
+ }
+ //
+ //.close {
+ //  animation: close 2s ease;
+ //}
+ //
+ //@keyframes close {
+ //  0% {
+ //    opacity: 1;
+ //  }
+ //  100% {
+ //    opacity: 0;
+ //  }
+ //}
+ //
+ //.open {
+ //  animation: open 2s ease;
+ //}
+ //
+ //@keyframes open {
+ //  0% {
+ //    opacity: 0;
+ //  }
+ //  100% {
+ //    opacity: 1;
+ //  }
+ //}
+
 
 </style>

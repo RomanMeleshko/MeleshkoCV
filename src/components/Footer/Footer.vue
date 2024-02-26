@@ -1,71 +1,43 @@
 <template>
  <div id="Footer">
 
-   <div class="footer">
+   <div class="footer" id="contact">
      <div class="footer_wrapper">
 
        <div class="row">
-         <div class="col d-flex justify-content-center align-items-center">
-           <div class="footer_banner">
-             <label>FRONT END</label>
+         <div class="col-md-3 col-sm-6 my-4 my-sm-4 d-flex justify-content-center align-items-center">
+           <div v-tooltip="textTooltip" class="footer_banner">
+
+             <slot name="footer-banner"></slot>
+
            </div>
          </div>
-         <div class="col">
+         <div class="col-md-3 col-sm-6 d-flex justify-content-sm-center align-items-center">
            <div class="footer_place">
 
-             <ul class="ps-0">
-               <li class="footer_title pb-2">Местонахождение</li>
-               <li class="contacts">
-                 <span class="pre">г. </span>
-                 <span>Полтава</span>
-               </li>
-             </ul>
+             <slot name="footer-place"></slot>
 
            </div>
          </div>
-         <div class="col">
+         <div class="col-md-3 col-sm-6 d-flex justify-content-sm-center align-items-center">
            <div class="footer_callback">
 
-             <ul class="ps-0">
-               <li class="footer_title pb-2">Обратная связь</li>
-               <li class="contacts">
-                 <span>тел. </span>
-                 <span>0955209822</span>
-               </li>
-               <li class="contacts">
-                 <span>email. </span>
-                 <span>roman.meleshko1@gmail.com</span>
-               </li>
-             </ul>
+             <slot name="footer-callback"></slot>
 
            </div>
          </div>
-         <div class="col">
+         <div class="col-md-3 col-sm-6 d-flex justify-content-sm-center align-items-center">
            <div class="footer_call">
 
-             <ul class="ps-0">
-               <li class="footer_title pb-2">Связь</li>
-               <li>
-                 <span class="icon px-1">
-                   <a href="https://github.com/RomanMeleshko/MeleshkoCV" target="_blank">
-                     <font-awesome-icon icon="fa-brands fa-github" />
-                   </a>
-                 </span>
-                 <span class="icon px-1">
-                   <a href="https://www.instagram.com/roma_meleshko/" target="_blank">
-                     <font-awesome-icon icon="fa-brands fa-square-instagram" />
-                   </a>
-                 </span>
-                 <span class="icon px-1">
-                   <a href="https://www.linkedin.com/in/roman-meleshko-400036160/" target="_blank">
-                     <font-awesome-icon icon="fa-brands fa-linkedin" />
-                   </a>
-                 </span>
-               </li>
-             </ul>
+             <slot name="footer-call"></slot>
 
            </div>
          </div>
+
+         <svg class="footer-waves" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+           <path fill="#0099ff" fill-opacity="1" d="M0,192L48,202.7C96,213,192,235,288,218.7C384,203,480,149,576,144C672,139,768,181,864,208C960,235,1056,245,1152,250.7C1248,256,1344,256,1392,256L1440,256L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+         </svg>
+
        </div>
 
      </div>
@@ -75,57 +47,31 @@
 </template>
 
 <script lang="ts">
-
 import { defineComponent } from 'vue';
 
 export default defineComponent({
   name: "Footer",
   data() {
     return {
-
+      textTooltip: "My logo!)"
     }
-  }
+  },
 })
 </script>
 
 <style lang="scss" scoped>
 @import "scss/variables.scss";
 
- .footer {
-   font-size: 14px;
-   margin-top: 10px;
-   padding: $footer-padding;
-   background: $background-block;
-   border-radius: $radius-block;
+ .footer-waves {
+   margin-top: -150px;
+   z-index: -1;
+   opacity: 0.8;
  }
 
- .footer_banner {
-   font-size: 20px;
+ @media all and (max-width: 500px) {
+   .footer-waves {
+     margin-top: -40px;
+   }
  }
 
- .footer_title {
-   font-size: 16px;
- }
-
- .fa-github,
- .fa-square-instagram,
- .fa-linkedin {
-   width: 30px;
-   height: 30px;
-   color: #1A9FF5;
- }
-
- ul {
-   list-style-type: none;
- }
-
- .contacts > span:first-child {
-   color: #9fa19e;
- }
-
- //.dron {
- //  display: flex;
- //  justify-content: center;
- //  align-items: center;
- //}
 </style>
