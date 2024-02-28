@@ -13,7 +13,7 @@ interface Note {
     phone?: string;
     email?: string;
     place?: string;
-    img?: string;
+    image?: string;
 }
 
 export default Note

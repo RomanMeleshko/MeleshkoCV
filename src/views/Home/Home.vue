@@ -4,10 +4,8 @@
 
       <div v-if="show" class="home_wrapper">
 
-        <Animation v-for="item in animationImages"
-                   :key="item.id"
-                   :img="item.img"
-                   :class_name="item.class">
+        <Animation>
+          <img class="animation_view" src="/src/assets/rocket.gif" />
         </Animation>
 
         <div class="row p-4 mood" data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000">
@@ -17,7 +15,7 @@
               <template v-slot:title>
 
                 <div class="title_block text-center text-sm-start text-md-start text-lg-start text-xl-start">
-                  <p class="title p-2">Front end <span>Developer</span></p>
+                  <p class="title p-2"><span class="r-light-blue">Front end</span> Developer</p>
                   <p class="sub_title">Creating Frontend it is art of the numbers on the clean canvas of the browser</p>
                   <span>
                     <button v-tooltip="textTooltip" class="get_start">Get start</button>
@@ -28,7 +26,7 @@
             </TitleInfo>
 
           </div>
-          <div class="col col-md-6 col-lg-6 d-flex justify-content-center align-items-center">
+          <div class="col col-md-6 col-lg-6 pt-2 d-flex justify-content-center align-items-center">
 
             <Foto>
               <template v-slot:foto>
@@ -52,7 +50,7 @@
               <template v-slot:title>
 
                 <div class="title_block text-center text-sm-start text-md-start text-lg-start text-xl-start">
-                  <p class="title_info">The some a little info about me</p>
+                  <p class="title_info">The some a little <span class="r-apple-green">info</span> about me</p>
                 </div>
 
               </template>
@@ -169,7 +167,8 @@
         <ButtonTop>
           <template v-slot:buttonTop>
 
-            <button class="buttonTop">Top</button>
+<!--            <button class="buttonTop">Top</button>-->
+            <img class="buttonTop" src="/src/assets/polar-rocket.gif" />
 
           </template>
         </ButtonTop>
@@ -188,8 +187,6 @@ import TitleInfo from "components/Home/TitleInfo.vue";
 import Animation from "components/Animation/Animation.vue";
 import ButtonTop from "components/Buttons/ButtonTop.vue";
 
-import Note from "models/interface/Note";
-
 import AOS from 'aos';
 
 import { defineComponent } from 'vue';
@@ -202,29 +199,15 @@ export default defineComponent({
       show: false,
       showButtonTop: false,
       count: 0,
-      heightWindow: window.innerHeight,
-      animationImages: [
-        {
-          id: 0,
-          img: "/src/assets/ufo.png",
-          class: "ufo"
-        } as Note,
-        {
-          id: 1,
-          img: "/src/assets/appo.png",
-          class: "oppo"
-        } as Note
-
-      ],
       textTooltip: "This place for feature feature!Not now)",
 
       textMe: "I am glad see everyone to here at my page)It is really important for me)\n" +
               "And I would like to share to you with my working experience and my education)\n" +
               "Just scroll down and can meeting more details about me!",
 
-      textEducation: "I graduated from Kharkiv National Institute and got specialty\n" +
+      textEducation: "I graduated from Kharkiv National Institute and got specialty" +
                      "System protection of information and Cybersecurity.\n" +
-                     "But at the last course of my education liked to learn\n" +
+                     "But at the last course of my education liked to learn" +
                      "programming and already more than five years work as Frontend developer.",
 
       textHobby: "What about hobby?) Actually I liking speed ride on the sport motorbike.\n" +
@@ -257,24 +240,21 @@ export default defineComponent({
 <style lang="scss">
 @import "scss/variables.scss";
 
- // ButtonTop scroll
+ // ======= ButtonTop scroll ========
  .buttonTop {
-   width: 50px;
-   height: 50px;
+   width: 90px;
+   height: 90px;
    border-radius: 50%;
    position: absolute;
    right: 20px;
    margin-top: -50px;
-   box-shadow: 0 5px 15px 0 #0099ff;
    transition: 0.5s;
    outline: none;
    border: none;
-   background: #eece49;
  }
 
  .buttonTop:hover {
-   transform: translate(0,-3px);
-   box-shadow: 0 20px 40px 0 #0099ff;
+   transform: translate(0,-8px);
  }
 
  .home {
@@ -287,6 +267,7 @@ export default defineComponent({
  }
 
  .wrapper_foto {
+   position: relative;
    background: #FF6F30;
    border-radius: 50%;
  }
@@ -303,6 +284,7 @@ export default defineComponent({
    min-width: 200px;
    font-size: clamp(12px, 4.5vw, 16px);
    border-radius: 50%;
+   white-space: break-spaces;
  }
 
  .v-text {
@@ -313,6 +295,7 @@ export default defineComponent({
  }
 
  .get_start {
+   position: relative;
    border: none;
    padding: 10px 40px;
    border-radius: 20px;
@@ -320,6 +303,7 @@ export default defineComponent({
    color: #ffffff;
  }
 
+ // ======== Title page =========
  .title {
    font-size: clamp(14px, 4.5vw, 48px);
  }
@@ -332,7 +316,7 @@ export default defineComponent({
    color: #767475;
  }
 
- // Animation elements which have wrapper Transition tag
+ // ========== Animation elements which have wrapper Transition tag =========
  .home-enter-active,
  .home-leave-active {
   transition: opacity 3s ease,
@@ -343,6 +327,32 @@ export default defineComponent({
  .home-leave-to {
    opacity: 0;
    margin-top: 50px;
+ }
+
+ // ========== Animation for others views =======
+ .animation_view {
+   position: absolute;
+ }
+
+ @media (max-width: 1200px) {
+   .animation_view {
+     width: 700px;
+   }
+ }
+ @media (max-width: 992px) {
+   .animation_view {
+     width: 600px;
+   }
+ }
+ @media (max-width: 768px) {
+   .animation_view {
+     width: 500px;
+   }
+ }
+ @media (max-width: 576px) {
+   .animation_view {
+     width: 320px;
+   }
  }
 
 </style>

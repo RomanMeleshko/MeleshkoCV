@@ -1,8 +1,10 @@
 <template>
  <div id="Animation">
-   <div :class="class_name">
-     <img class="animation-logo" :src="img" alt="" />
+
+   <div class="rocket">
+     <slot></slot>
    </div>
+
  </div>
 </template>
 
@@ -18,11 +20,8 @@ export default {
   },
 
   props: {
-    img: {
-      type: String
-    },
-    class_name: {
-      type: String
+    animation_images: {
+      type: Object
     }
   }
 }
@@ -31,59 +30,27 @@ export default {
 <style lang="scss" scoped>
 @import "scss/variables.scss";
 
- .ufo, .oppo {
+ .rocket {
    z-index: -999;
-   opacity: 0.2;
-   width: 50%;
-   height: 50%;
-   margin: auto;
-   position: absolute;
-   top: 0; left: 0; bottom: 0; right: 0;
+   opacity: 0.1;
+   display: flex;
+   justify-content: center;
  }
 
- .ufo {
-   animation: 15s move ease-in infinite;
+ .rocket {
+   animation: 30s move ease-in-out infinite;
  }
-
- .oppo {
-   width: 0%;
-   height: 0%;
-   animation: 30s move_rotate ease-in infinite;
- }
-
-@media (max-width: 576px) {
-  .animation-logo {
-    height: 130px;
-  }
-
-  .oppo {
-    left: -30px;
-  }
-}
 
 @keyframes move {
   0% {
     transform: translateY(0px);
   }
   50% {
-    transform: translateY(150px);
+    transform: translateY(100px);
   }
   100% {
     transform: translateY(0px);
   }
 }
-
-@keyframes move_rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-  50% {
-    transform: rotate(60deg);
-  }
-  100% {
-    transform: rotate(0deg);
-  }
-}
-
 
 </style>
