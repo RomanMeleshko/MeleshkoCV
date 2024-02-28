@@ -25,7 +25,6 @@ export default {
   data() {
     return {
       show: false,
-      scrollWindow: 0
     }
   },
 
@@ -68,7 +67,7 @@ export default {
    height: 20px;
  }
 
- // Animation elements which have wrapper Transition tag
+ // ======= Animation elements which have wrapper Transition tag ========
  .nav-enter-active,
  .nav-leave-active {
   transition: opacity 3s ease,
@@ -80,32 +79,5 @@ export default {
    opacity: 0;
    margin-top: 50px;
  }
- //
- //.close {
- //  animation: close 2s ease;
- //}
- //
- //@keyframes close {
- //  0% {
- //    opacity: 1;
- //  }
- //  100% {
- //    opacity: 0;
- //  }
- //}
- //
- //.open {
- //  animation: open 2s ease;
- //}
- //
- //@keyframes open {
- //  0% {
- //    opacity: 0;
- //  }
- //  100% {
- //    opacity: 1;
- //  }
- //}
-
 
 </style>
