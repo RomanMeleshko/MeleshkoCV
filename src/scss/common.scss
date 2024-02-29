@@ -1,7 +1,8 @@
 @import "bootstrap/dist/css/bootstrap.css";
 @import 'swiper/swiper-bundle.css';
 
-// Global styles for all elements
+
+// ======== Global styles for all elements ========
 * {
   font-family: Gilroy;
   font-weight: 300;
@@ -19,7 +20,7 @@ body {
   background: #ECEDED;
 }
 
-// Global style for tooltip directive
+// ========= Global style for tooltip directive =========
 .tooltip_block {
    padding: 10px 15px;
    position: absolute;
