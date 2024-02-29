@@ -1,6 +1,7 @@
 $light-blue: #90e0ef;
 $apple-green: #a5be00;
-$light-gray: #bcbd8b;
+$hard-gray: #bcbd8b;
+$light-gray: #d7e3fc;
 
 @mixin bg-color-text( $name, $radius ) {
   background: $name;
@@ -10,5 +11,6 @@ $light-gray: #bcbd8b;
 
 .r-light-blue { @include bg-color-text( $light-blue, 72% 28% 82% 18% / 23% 42% 58% 77% ); }
 .r-apple-green { @include bg-color-text( $apple-green, 93% 7% 22% 78% / 23% 42% 58% 77%  ) }
-.r-light-gray { @include bg-color-text( $light-gray, 82% 18% 83% 17% / 0% 100% 0% 100%   ) }
+.r-hard-gray { @include bg-color-text( $hard-gray, 83% 17% 79% 21% / 39% 39% 61% 61%    ) }
+.r-light-gray { @include bg-color-text( $light-gray, 83% 17% 79% 21% / 39% 39% 61% 61%    ) }
 
