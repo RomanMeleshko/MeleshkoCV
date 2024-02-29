@@ -8,8 +8,8 @@
           <img class="animation_view" src="/src/assets/rocket.gif" />
         </Animation>
 
-        <div class="row p-4 mood" data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000">
-          <div class="col col-md-6 col-lg-6 d-flex justify-content-center align-items-center">
+        <div class="row p-4 mood">
+          <div class="col col-md-6 col-lg-6 d-flex justify-content-center align-items-center" data-aos="fade-right" data-aos-delay="50" data-aos-duration="1000">
 
             <TitleInfo ref="info">
               <template v-slot:title>
@@ -26,7 +26,7 @@
             </TitleInfo>
 
           </div>
-          <div class="col col-md-6 col-lg-6 pt-2 d-flex justify-content-center align-items-center">
+          <div class="col col-md-6 col-lg-6 pt-2 d-flex justify-content-center align-items-center" data-aos="fade-left" data-aos-delay="50" data-aos-duration="1000">
 
             <Foto>
               <template v-slot:foto>
@@ -43,7 +43,7 @@
           </div>
         </div>
 
-        <div class="row py-4 justify-content-center" data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000">
+        <div class="row py-4 justify-content-center" data-aos="fade-right" data-aos-delay="50" data-aos-duration="1000">
           <div class="col-md-10 col-sm-10 px-4 d-flex justify-content-center">
 
             <TitleInfo>
@@ -59,9 +59,9 @@
           </div>
         </div>
 
-        <div class="row" id="about" data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000">
+        <div class="row" id="about">
 
-          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 py-xl-5 py-lg-5 py-md-5 py-3 px-5 d-flex justify-content-center align-items-center title-block">
+          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 py-xl-5 py-lg-5 py-md-5 py-3 px-5 d-flex justify-content-center align-items-center title-block" data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000">
 
             <TitleInfo>
 
@@ -78,7 +78,7 @@
             </TitleInfo>
 
           </div>
-          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 py-xl-5 py-lg-5 py-md-4 py-3 d-flex justify-content-center">
+          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 py-xl-5 py-lg-5 py-md-4 py-3 d-flex justify-content-center" data-aos="fade-up-left" data-aos-delay="50" data-aos-duration="1000">
 
             <Foto>
               <template v-slot:foto>
@@ -95,8 +95,8 @@
         </div>
 
 
-        <div class="row" data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000">
-          <div class="col-xl-6 col-lg-6 order-md-first order-sm-first order-last col-md-6 col-sm-6 py-xl-5 py-lg-5 py-md-4 py-3 d-flex justify-content-center">
+        <div class="row">
+          <div class="col-xl-6 col-lg-6 order-md-first order-sm-first order-last col-md-6 col-sm-6 py-xl-5 py-lg-5 py-md-4 py-3 d-flex justify-content-center" data-aos="fade-right" data-aos-delay="50" data-aos-duration="1000">
 
             <Foto>
               <template v-slot:foto>
@@ -110,14 +110,14 @@
             </Foto>
 
           </div>
-          <div class="col-xl-6 col-lg-6 order-md-last order-first order-sm-last col-md-6 col-sm-6 py-xl-5 py-lg-5 py-md-5 py-3 px-5 d-flex justify-content-center align-items-center title-block">
+          <div class="col-xl-6 col-lg-6 order-md-last order-first order-sm-last col-md-6 col-sm-6 py-xl-5 py-lg-5 py-md-5 py-3 px-5 d-flex justify-content-center align-items-center title-block" data-aos="zoom-in-left" data-aos-delay="50" data-aos-duration="1000">
 
             <TitleInfo ref="info">
               <template v-slot:title>
 
               <div>
-                <h1>About education</h1>
-                <p class="text-block">
+                <h1><span class="r-hard-gray foo">About </span> education</h1>
+                <p class="text-block r-light-gray">
                   {{ textEducation }}
                 </p>
               </div>
@@ -129,9 +129,9 @@
         </div>
 
 
-        <div class="row" data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000">
+        <div class="row">
 
-          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 py-xl-5 py-lg-5 py-md-5 py-3 px-5 d-flex justify-content-center align-items-center title-block">
+          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 py-xl-5 py-lg-5 py-md-5 py-3 px-5 d-flex justify-content-center align-items-center title-block" data-aos="flip-left" data-aos-delay="50" data-aos-duration="1000">
 
             <TitleInfo>
 
@@ -148,12 +148,12 @@
             </TitleInfo>
 
           </div>
-          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 py-xl-5 py-lg-5 py-md-4 py-3 d-flex justify-content-center">
+          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 py-xl-5 py-lg-5 py-md-4 py-3 d-flex justify-content-center" data-aos="flip-right" data-aos-delay="50" data-aos-duration="1000">
 
             <Foto>
               <template v-slot:foto>
 
-                <div class="">
+                <div>
                   <img class="foto" src="assets/just.png" alt="man">
                   <div class="shadow-foto"></div>
                 </div>
@@ -205,9 +205,9 @@ export default defineComponent({
               "And I would like to share to you with my working experience and my education)\n" +
               "Just scroll down and can meeting more details about me!",
 
-      textEducation: "I graduated from Kharkiv National Institute and got specialty" +
-                     "System protection of information and Cybersecurity.\n" +
-                     "But at the last course of my education liked to learn" +
+      textEducation: "I graduated from Kharkiv National University and got specialty " +
+                     "System protection of information and cybersecurity.\n" +
+                     "But at the last course of my education liked to learn " +
                      "programming and already more than five years work as Frontend developer.",
 
       textHobby: "What about hobby?) Actually I liking speed ride on the sport motorbike.\n" +
@@ -239,6 +239,12 @@ export default defineComponent({
 
 <style lang="scss">
 @import "scss/variables.scss";
+
+ .foo {
+   font-weight: normal;
+ }
+
+
 
  // ======= ButtonTop scroll ========
  .buttonTop {
