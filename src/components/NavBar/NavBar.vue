@@ -1,7 +1,7 @@
 <template>
  <div class="NavBar">
 
-   <nav v-if="show" class="navbar navbar-expand-sm navbar-light">
+   <nav class="navbar navbar-expand-sm navbar-light">
      <div class="container-fluid px-xl-0 px-lg-0 px-md-0 px-sm-0">
        <slot name="navbar-brand"></slot>
        <button class="navbar-toggler p-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo" aria-controls="navbarTogglerDemo" aria-expanded="false" aria-label="Toggle navigation">
@@ -24,13 +24,8 @@ export default {
   name: "NavBar",
   data() {
     return {
-      show: false,
     }
   },
-
-  mounted() {
-    this.show = true;
-  }
 }
 </script>
 

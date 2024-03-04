@@ -167,7 +167,6 @@
         <ButtonTop>
           <template v-slot:buttonTop>
 
-<!--            <button class="buttonTop">Top</button>-->
             <img class="buttonTop" src="/src/assets/polar-rocket.gif" />
 
           </template>
@@ -243,8 +242,6 @@ export default defineComponent({
  .foo {
    font-weight: normal;
  }
-
-
 
  // ======= ButtonTop scroll ========
  .buttonTop {
