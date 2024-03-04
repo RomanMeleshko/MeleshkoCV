@@ -96,11 +96,9 @@
 </template>
 
 <script lang="ts">
-import "bootstrap/dist/js/bootstrap.bundle.min.js";
-
 import AOS from 'aos';
 
-import { defineComponent } from 'vue'
+import { defineComponent } from 'vue';
 
 import Note from "models/interface/Note";
 import Link from "models/interface/Link";
