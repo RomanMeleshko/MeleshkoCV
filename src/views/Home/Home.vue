@@ -68,7 +68,7 @@
               <template v-slot:title>
 
               <div>
-                <h1>About me</h1>
+                <h1 class="header-title">About me</h1>
                 <p class="text-block">
                    {{ textMe }}
                 </p>
@@ -116,7 +116,7 @@
               <template v-slot:title>
 
               <div>
-                <h1><span class="r-hard-gray foo">About </span> education</h1>
+                <h1 class="header-title"><span class="r-hard-gray foo">About </span> education</h1>
                 <p class="text-block r-light-gray">
                   {{ textEducation }}
                 </p>
@@ -138,7 +138,7 @@
               <template v-slot:title>
 
               <div>
-                <h1>About hobby</h1>
+                <h1 class="header-title">About hobby</h1>
                 <p class="text-block">
                   {{ textHobby }}
                 </p>
@@ -271,7 +271,7 @@ export default defineComponent({
 
  .wrapper_foto {
    position: relative;
-   background: #FF6F30;
+   background: #ff7f51;
    border-radius: 50%;
  }
 
@@ -302,22 +302,25 @@ export default defineComponent({
    border: none;
    padding: 10px 40px;
    border-radius: 20px;
-   background: #FF6F30;
+   background: #ff7f51;
    color: #ffffff;
  }
 
  // ======== Title page =========
  .title {
-   font-size: clamp(14px, 4.5vw, 48px);
+   font-size: clamp(20px, 4.5vw, 48px);
  }
  .title_info {
-   font-size: clamp(18px, 4.5vw, 48px);
+   font-size: clamp(20px, 4.5vw, 48px);
  }
 
  .sub_title {
-   font-size: clamp(12px, 2.5vw, 18px);
+   font-size: clamp(14px, 2.5vw, 18px);
    color: #767475;
  }
+  .header-title {
+    font-size: clamp(18px, 4.5vw, 48px);
+  }
 
  // ========== Animation elements which have wrapper Transition tag =========
  .home-enter-active,
